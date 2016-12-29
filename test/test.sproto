@@ -1,9 +1,4 @@
-.class_g {
-    a 1: integer
-    b 2: integer
-    c 3: boolean
-    d 4: string
-}
+#include test2.sproto
 
 .class_a {
     a 1: integer(1)

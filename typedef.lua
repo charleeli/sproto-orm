@@ -123,7 +123,7 @@ local function preprocess(filename, dir)
     local idx = 0
     for line in io.lines(path) do
         idx = idx + 1
-        local include = string.match(line, "^%s*include%s+([^%s]+)%s*")
+        local include = string.match(line, "^%s*#include%s+([^%s]+)%s*")
         if not include then
             local _idx = #text + 1
             text[_idx] = line
