@@ -1,8 +1,8 @@
 .class_g {
     a 1: integer
-    b 1: integer
-    c 1: boolean
-    d 1: string
+    b 2: integer
+    c 3: boolean
+    d 4: string
 }
 
 .class_a {
@@ -28,11 +28,11 @@
 
     .d {
         a 1: integer
-        b 1: string
+        b 2: string
         .c {
             a 1: integer
-            b 1: *string
-            c 1: *integer(string)
+            b 2: *string
+            c 3: *integer(string)
         }
     }
 }
