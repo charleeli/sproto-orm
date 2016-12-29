@@ -1,5 +1,5 @@
 local lpeg = require "lpeg"
-tprint = require('utils').print_table
+--tprint = require('utils').print_table
 local P = lpeg.P
 local R = lpeg.R
 local S = lpeg.S
@@ -73,17 +73,17 @@ local typedef = P {
              (
                  namedpat(
                      "ref",
-                     typename * (blank0 * decimal)^0
+                     typename * decimal^0
                  ) + 
                      
                  namedpat(
                      "list",
-                     '*' * blank0 * typename * (mainkey + decimal)^0
+                     '*' * blank0 * typename * (decimal + mainkey)^0
                  ) +
 
                  namedpat(
                      "map",
-                     "*" * typename * blank0 * mainkey
+                     "*" * blank0 * typename * mainkey
                  )
              )
         )
@@ -103,12 +103,12 @@ local typedef = P {
 
     LIST = namedpat(
         "list",
-        blank0 * name * blank0 * tag * blank0 * ":" * blank0 * "*" * blank0 * typename * (mainkey + decimal)^0
+        blank0 * name * blank0 * tag * blank0 * ":" * blank0 * "*" * blank0 * typename * (decimal + mainkey)^0
     ),
 
     MAP = namedpat(
         "map",
-        blank0 * name * blank0 * tag * blank0 * ":" * blank0 * "*" * typename * blank0 * mainkey
+        blank0 * name * blank0 * tag * blank0 * ":" * blank0 * "*" * blank0 * typename * mainkey
     ),
 
     ALL = multipat(V"STRUCT" + V"LIST" + V"MAP"),

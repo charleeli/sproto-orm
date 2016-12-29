@@ -2,7 +2,7 @@ local orm = require 'orm'
 tprint = require('utils').print_table
 
 -- test
-local type_list = (require 'typedef').parse('test.td', "./test")
+local type_list = (require 'typedef').parse('test.sproto', "./test")
 tprint(type_list)
 
 print('[TC]: type init')

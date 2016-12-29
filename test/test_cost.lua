@@ -1,6 +1,6 @@
 local orm = require 'orm'
 tprint = require('utils').print_table
-local type_list = (require 'typedef').parse('game.td', "./test")
+local type_list = (require 'typedef').parse('game.sproto', "./test")
 orm.init(type_list)
 
 local data =   {
